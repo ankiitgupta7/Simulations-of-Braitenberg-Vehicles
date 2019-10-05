@@ -27,6 +27,8 @@ A Braitenberg vehicle is an agent that can autonomously move around based on its
 Depending on how sensors and wheels are connected, the vehicle exhibits different behaviors (which can be goal-oriented). This means that, depending on the sensor-motor wiring, it appears to strive to achieve certain situations and to avoid others, changing course when the situation changes.
 
 ## 4. Environment
+![alt text](https://github.com/ankiitgupta7/Simulations-of-Braitenberg-Vehicles/blob/master/Images/Environment.png)
+
 ## 5. Wiring Rules and Activation Function
 ## 6. Vehicle Kinematics
 ## 7. Current Developmental Updates
