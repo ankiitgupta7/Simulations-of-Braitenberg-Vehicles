@@ -39,6 +39,7 @@ The vehicle’s initial positions are also randomly generated coordinates within
 ![alt text](https://github.com/ankiitgupta7/Simulations-of-Braitenberg-Vehicles/blob/master/Images/Environment.png)
 
 ## 5. Wiring Rules and Activation Function
+The vehicle movement is particularly inspired by sensory activation received through it's sensors and how this activation is tranferred to the motor (Internal Wiring).
 ## 6. Vehicle Kinematics
 ## 7. Current Developmental Updates
 ## 8. Setting up and executing Processing.py code
