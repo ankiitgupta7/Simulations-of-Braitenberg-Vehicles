@@ -7,8 +7,8 @@
 ### 5. Wiring Rules and Activation Function
 ### 6. Vehicle Kinematics
 ### 7. Current Developmental Updates
-### 8. Setting up and executing Processing.py code
-### 9. Future Developments
+### 8. Future Developments 
+### 9. Setting up and executing Processing.py code
 ### 10. Inference and Possible Implementations 
 ### 11. Acknowledgement
 ### 12. Reference
@@ -46,7 +46,7 @@ I have used the following expression as the sensory activation function, taking 
 A1 = k / ( k1 + k2 * r * r ), for non-inhibited activation, and
 <br><br> 
 A2 = k / ( k1 + k2 * r * r ), for inhibited activation.
- <br><br>
+<br><br>
 Where, k,k1,k2 are calibrated constants.
 
 
@@ -66,8 +66,25 @@ More specifically, the difference in the rotation speed of the wheels is mainly 
 ![alt text](https://github.com/ankiitgupta7/Simulations-of-Braitenberg-Vehicles/blob/master/Images/kinematics.png)
 
 ## 7. Current Developmental Updates
-## 8. Setting up and executing Processing.py code
-## 9. Future Developments
+As of now, I have set up the environment as shown above in section 4. Presently, on executing the main code we get to see the behaviors of a selected (opted) type of vehicle visible through their movement in the environment. So, all the vehicles in the environment are of the same type or alternatively we may assume all the stimuli in the environment provoke the same kind of behavior towards them. At present, the stimuli are set as independely moving image snips representing real stimuli moving across the environment.
+<br>
+One of the important outcomes of the development until now is a new perspective to look at a group of Braitenberg Vehicles as some intelligent swarm. The following are the snippets of the simulation execution.
+
+## 8. Future Developments 
+As per the original plan and GSoC proposal, I am going to take the next developmental steps as following.
+* Code rest of the vehicles i.e. vehicle 4 onwards.
+* Handle the proximity issues between two vehicles to ensure no collision.
+* Let the vehicle orient itself in the direction it would be moving. Presently, it’s either left or right.
+* Introduce different types of stimuli apart from images e.g. sound, text, etc. and integrate them into the environment in a representable and meaningful form.
+* Apply Deep Learning to get meaning out of various stimuli roaming in the environment and influence the behavior of the vehicles present in the environment.
+* Analyze the behavior of the resulting mixed types of vehicles in the environment.
+
+
+## 9. Setting up and executing Processing.py code
+The code written here can be directly run on [Processing Software](https://processing.org/download/) installed on your PC. Make sure to opt for the python-mode while the elementary setup.
+
+Alternatively, you make run these codes from terminal too and editing code in your favorite text editor. Follow the instructions on [this](https://py.processing.org/tutorials/command-line/) page.
+
 ## 10. Inference and Possible Implementations 
 ## 11. Acknowledgement
 ## 12. Reference
