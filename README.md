@@ -39,7 +39,25 @@ The vehicle’s initial positions are also randomly generated coordinates within
 ![alt text](https://github.com/ankiitgupta7/Simulations-of-Braitenberg-Vehicles/blob/master/Images/Environment.png)
 
 ## 5. Wiring Rules and Activation Function
-The vehicle movement is particularly inspired by sensory activation received through it's sensors and how this activation is tranferred to the motor (Internal Wiring).
+Each type of vehicle is characterized by these two properties being unique to them. By tweaking these properties we get different emergent behaviors and hence different names are assigned to the vehicles. The vehicle movement is particularly inspired by sensory activation received through its sensors and how this activation is transferred to the motor (Internal Wiring). 
+<br><br>
+I have used the following expression as the sensory activation function, taking a variable “r” as the euclidean distance between sensor and stimulus.
+ <br>
+A1 = k / ( k1 + k2 * r * r ), for non-inhibited activation, and
+<br><br> 
+A2 = k / ( k1 + k2 * r * r ), for inhibited activation.
+ <br><br>
+Where, k,k1,k2 are calibrated constants.
+
+
+So, A1 is used in the case of 1A, 2A, 2B, while A2 is used in the case of 1B, 3A, 3B. Note that these are monotonic functions so for developing the next vehicles which have non-monotonic activation, some different activation function has to be used.
+ <br><br>
+Talking about the internal wiring, these are merely two simple combinations between the pair of sensors and the wheels. I have defined weights for each internal connection between sensor and wheel. So, it’s very evident that for parallel connection, w1, w2, w3, w4 would be 1, 1, 0, 0 respectively. And for crossed connections, the weights corresponding to w1, w2, w3, w4 would be 1, 1, 0, 0. This can be clearly seen in the implemented code.
+<br>
+![alt text](https://github.com/ankiitgupta7/Simulations-of-Braitenberg-Vehicles/blob/master/Images/crossed.png)
+<br>
+![alt text](https://github.com/ankiitgupta7/Simulations-of-Braitenberg-Vehicles/blob/master/Images/parallel.png)
+
 ## 6. Vehicle Kinematics
 ## 7. Current Developmental Updates
 ## 8. Setting up and executing Processing.py code
