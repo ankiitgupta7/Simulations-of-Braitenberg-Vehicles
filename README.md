@@ -42,7 +42,7 @@ The vehicle’s initial positions are also randomly generated coordinates within
 Each type of vehicle is characterized by these two properties being unique to them. By tweaking these properties we get different emergent behaviors and hence different names are assigned to the vehicles. The vehicle movement is particularly inspired by sensory activation received through its sensors and how this activation is transferred to the motor (Internal Wiring). 
 <br><br>
 I have used the following expression as the sensory activation function, taking a variable “r” as the euclidean distance between sensor and stimulus.
- <br>
+ <br><br>
 A1 = k / ( k1 + k2 * r * r ), for non-inhibited activation, and
 <br><br> 
 A2 = k / ( k1 + k2 * r * r ), for inhibited activation.
@@ -67,7 +67,7 @@ More specifically, the difference in the rotation speed of the wheels is mainly 
 
 ## 7. Current Developmental Updates
 As of now, I have set up the environment as shown above in section 4. Presently, on executing the main code we get to see the behaviors of a selected (opted) type of vehicle visible through their movement in the environment. So, all the vehicles in the environment are of the same type or alternatively we may assume all the stimuli in the environment provoke the same kind of behavior towards them. At present, the stimuli are set as independely moving image snips representing real stimuli moving across the environment.
-<br>
+<br><br>
 One of the important outcomes of the development until now is a new perspective to look at a group of Braitenberg Vehicles as some intelligent swarm. The following are the snippets of the simulation execution.
 
 ## 8. Future Developments 
@@ -86,5 +86,14 @@ The code written here can be directly run on [Processing Software](https://proce
 Alternatively, you make run these codes from terminal too and editing code in your favorite text editor. Follow the instructions on [this](https://py.processing.org/tutorials/command-line/) page.
 
 ## 10. Inference and Possible Implementations 
+As it’s very evident from the simulation, one of the major takeaways could be using the Braitenberg Vehicles as intelligent swarms.
+<br><br>
+Also, the simulations can be used to optimize paths given different kinds of stimuli.
+
 ## 11. Acknowledgement
+I thank Dr. Bradly Alicea for mentoring and holding weekly meetings post-GSoC results and guiding me during my proposal making before the results were announced. I also thank Stefan Dvoretskii, Jesse Parent, and Ziyi Gong for our interactions during the weekly calls.
+<br><br>
+I sincerely thank Google Summer of Code and INCF for opening the topic as a prospective project and reviewing my proposal on it.
+
 ## 12. Reference
+* [Processing](https://processing.org/), the organization.
