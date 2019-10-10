@@ -36,7 +36,7 @@ The stimuli are scattered throughout the environment which may or may not be mov
 <br><br>
 The vehicle’s initial positions are also randomly generated coordinates within the environment window. The movement of the vehicles are governed by the type of stimulus around and their proximity. So, the vehicle movement is completely dependent upon the stimuli around.
 
-![alt text](https://github.com/ankiitgupta7/Simulations-of-Braitenberg-Vehicles/blob/master/Images/test.gif)
+![alt text](https://github.com/ankiitgupta7/Simulations-of-Braitenberg-Vehicles/blob/master/Images/Environment.png)
 
 ## 5. Wiring Rules and Activation Function
 Each type of vehicle is characterized by these two properties being unique to them. By tweaking these properties we get different emergent behaviors and hence different names are assigned to the vehicles. The vehicle movement is particularly inspired by sensory activation received through its sensors and how this activation is transferred to the motor (Internal Wiring). 
@@ -54,9 +54,10 @@ So, A1 is used in the case of 1A, 2A, 2B, while A2 is used in the case of 1B, 3A
  <br><br>
 Talking about the internal wiring, these are merely two simple combinations between the pair of sensors and the wheels. I have defined weights for each internal connection between sensor and wheel. So, it’s very evident that for parallel connection, w1, w2, w3, w4 would be 1, 1, 0, 0 respectively. And for crossed connections, the weights corresponding to w1, w2, w3, w4 would be 1, 1, 0, 0. This can be clearly seen in the implemented code.
 <br>
-![alt text](https://github.com/ankiitgupta7/Simulations-of-Braitenberg-Vehicles/blob/master/Images/crossed.png)
-<br>
+
 ![alt text](https://github.com/ankiitgupta7/Simulations-of-Braitenberg-Vehicles/blob/master/Images/parallel.png)
+![alt text](https://github.com/ankiitgupta7/Simulations-of-Braitenberg-Vehicles/blob/master/Images/crossed.png)
+
 
 ## 6. Vehicle Kinematics
 Digging into the details of vehicle kinematics of Braitenberg Vehicles, we find that the only thing responsible for their movement is the rotation speed of the two wheels and the difference between them.  
@@ -69,6 +70,19 @@ More specifically, the difference in the rotation speed of the wheels is mainly 
 As of now, I have set up the environment as shown above in section 4. Presently, on executing the main code we get to see the behaviors of a selected (opted) type of vehicle visible through their movement in the environment. So, all the vehicles in the environment are of the same type or alternatively we may assume all the stimuli in the environment provoke the same kind of behavior towards them. At present, the stimuli are set as independely moving image snips representing real stimuli moving across the environment.
 <br><br>
 One of the important outcomes of the development until now is a new perspective to look at a group of Braitenberg Vehicles as some intelligent swarm. The following are the snippets of the simulation execution.
+<br>
+* Vehicle 2a with moving stimuli <br>
+![alt text](https://github.com/ankiitgupta7/Simulations-of-Braitenberg-Vehicles/blob/master/recordings/moving_2a.gif)
+* Vehicle 2a with fixed stimuli <br>
+![alt text](https://github.com/ankiitgupta7/Simulations-of-Braitenberg-Vehicles/blob/master/recordings/rest_2a.gif)
+* Vehicle 2b with moving stimuli <br>
+![alt text](https://github.com/ankiitgupta7/Simulations-of-Braitenberg-Vehicles/blob/master/recordings/moving_2b.gif)
+* Vehicle 2b with fixed stimuli <br>
+![alt text](https://github.com/ankiitgupta7/Simulations-of-Braitenberg-Vehicles/blob/master/recordings/rest_2b.gif)
+* Vehicle 3a with moving stimuli <br>
+![alt text](https://github.com/ankiitgupta7/Simulations-of-Braitenberg-Vehicles/blob/master/recordings/moving_3a.gif)
+* Vehicle 3a with fixed stimuli <br>
+![alt text](https://github.com/ankiitgupta7/Simulations-of-Braitenberg-Vehicles/blob/master/recordings/rest_3a.gif)
 
 ## 8. Future Developments 
 As per the original plan and GSoC proposal, I am going to take the next developmental steps as following.
