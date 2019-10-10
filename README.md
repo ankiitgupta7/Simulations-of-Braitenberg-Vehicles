@@ -18,9 +18,10 @@ This is the implementation of my Braitenberg Vehicle Simulation Proposal, submit
 The present simulation uses [Processing.py](https://py.processing.org/) for UI support. The code written here are based upon ideas described in the book by the neuroscientist [Valentino Braitenberg](https://en.wikipedia.org/wiki/Valentino_Braitenberg) in his classic book "Vehicles: Experiments in Synthetic Psychology" (1984). The book describes how hypothetical analog vehicles (a combination of sensors, actuators and their interconnections), though simple in design, can exhibit behaviors akin to aggression, love, foresight, and optimism. So, we would see these meaningful behaviours emerge from vehicles as they interact with stimuli in the environment through the programmed simulation.
 
 ## 2. What would be the final outcome of this project?
-The final result would be an intelligent and autonomous system of "vehicles" from which emergent behaviours could be seen as a result of their interaction with the environmental stimuli. Each vehicle would seem intelligent enough to make decisions with respect to the environmental stimuli around.
+The final result would be an intelligent and autonomous system of "vehicles" from which emergent behaviors could be seen as a result of their interaction with the environmental stimuli. Each vehicle would seem intelligent enough to make decisions with respect to the environmental stimuli around.
 <br><br>
-As we have multiple vehicles(agents) interacting with multiple moving stimulus, the system of vehicles together might be viewed as an intelligent *swarm*. Moreover, each vehicle can also be set as a stimulus which might result in somemore meaningful behaviour as this would be an exact copy of the natural environment containing living and non-living beings together interacting with each other.
+As we have multiple vehicles(agents) interacting with multiple moving stimuli, the system of vehicles together might be viewed as an intelligent *swarm*. Moreover, each vehicle can also be set as a stimulus which might result in some more meaningful behavior as this would be an exact copy of the natural environment containing living and non-living beings together interacting with each other.
+
 
 ## 3. The Braitenberg Vehicle
 A Braitenberg vehicle is an agent that can autonomously move around based on its sensor inputs. It has primitive sensors that measure some stimulus at a point, and wheels (each driven by its own motor) that function as actuators or effectors.
@@ -34,12 +35,12 @@ The environment consist of multiple number of vehicles and different kinds of st
 <br><br>
 The stimuli are scattered throughout the environment which may or may not be moving. Their positions and movements rules are randomly generated values of a given range.
 <br><br>
-The vehicle’s initial positions are also randomly generated coordinates within the environment window. The movement of the vehicles are governed by the type of stimulus around and their proximity. So, the vehicle movement is completely dependent upon the stimuli around.
+The vehicle’s initial positions are also randomly generated coordinates within the environment window. The movement of the vehicles is governed by the type of stimulus around and their proximity. So, the vehicle movement is completely dependent upon the stimuli around.
 
 ![alt text](https://github.com/ankiitgupta7/Simulations-of-Braitenberg-Vehicles/blob/master/Images/Environment.png)
 
 ## 5. Wiring Rules and Activation Function
-Each type of vehicle is characterized by these two properties being unique to them. By tweaking these properties we get different emergent behaviors and hence different names are assigned to the vehicles. The vehicle movement is particularly inspired by sensory activation received through its sensors and how this activation is transferred to the motor (Internal Wiring). 
+Each type of vehicle is characterized by these two properties being unique to them. By tweaking these properties we get different emergent behaviors and hence different names are assigned to the vehicles. The vehicle movement is particularly inspired by sensory activation received through its sensors and how this activation is transferred to the motor (Internal Wiring).
 <br><br>
 I have used the following expression as the sensory activation function, taking a variable “r” as the euclidean distance between sensor and stimulus.
  <br><br>
@@ -60,16 +61,16 @@ Talking about the internal wiring, these are merely two simple combinations betw
 
 
 ## 6. Vehicle Kinematics
-Digging into the details of vehicle kinematics of Braitenberg Vehicles, we find that the only thing responsible for their movement is the rotation speed of the two wheels and the difference between them.  
+Digging into the details of vehicle kinematics of Braitenberg Vehicles, we find that the only thing responsible for their movement is the rotation speed of the two wheels and the difference between them. 
 <br>
 More specifically, the difference in the rotation speed of the wheels is mainly responsible for deflection from its otherwise straight-line trajectory. So, depending upon the activation received at the wheel rotators and their difference, a resultant vehicle movement is rendered.
 <br>
 ![alt text](https://github.com/ankiitgupta7/Simulations-of-Braitenberg-Vehicles/blob/master/Images/kinematics.png)
 
 ## 7. Current Developmental Updates
-As of now, I have set up the environment as shown above in section 4. Presently, on executing the main code we get to see the behaviors of a selected (opted) type of vehicle visible through their movement in the environment. So, all the vehicles in the environment are of the same type or alternatively we may assume all the stimuli in the environment provoke the same kind of behavior towards them. At present, the stimuli are set as independely moving image snips representing real stimuli moving across the environment.
+As of now, I have set up the environment as shown above in section 4. Presently, on executing the main code we get to see the behaviors of a selected (opted) type of vehicle visible through their movement in the environment. So, all the vehicles in the environment are of the same type or alternatively we may assume all the stimuli in the environment provoke the same kind of behavior towards them.
 <br><br>
-One of the important outcomes of the development until now is a new perspective to look at a group of Braitenberg Vehicles as some intelligent swarm. The following are the snippets of the simulation execution.
+One of the important outcomes of the development until now is a new perspective to look at a group of Braitenberg Vehicles as some intelligent swarm. The following are the snippets of the simulation execution. Note that as of now, I am done with coding up to vehicle 3.
 <br>
 * Vehicle 2a with moving stimuli <br>
 ![alt text](https://github.com/ankiitgupta7/Simulations-of-Braitenberg-Vehicles/blob/master/recordings/moving_2a.gif)
@@ -100,7 +101,7 @@ The code written here can be directly run on [Processing Software](https://proce
 Alternatively, you make run these codes from terminal too and editing code in your favorite text editor. Follow the instructions on [this](https://py.processing.org/tutorials/command-line/) page.
 
 ## 10. Inference and Possible Implementations 
-As it’s very evident from the simulation, one of the major takeaways could be using the Braitenberg Vehicles as intelligent swarms. Also, the simulations can be used to predict paths given different kinds of stimuli roaming around the environment.
+As it’s very evident from the simulation, one of the major takeaways could be using the Braitenberg Vehicles as intelligent swarms. Also, the simulations can be used to optimize paths given different kinds of stimuli.
 
 ## 11. Acknowledgement
 I thank Dr. Bradly Alicea for mentoring and holding weekly meetings post-GSoC results and guiding me during my proposal making before the results were announced. I also thank Stefan Dvoretskii, Jesse Parent, and Ziyi Gong for our interactions during the weekly calls.
@@ -108,5 +109,7 @@ I thank Dr. Bradly Alicea for mentoring and holding weekly meetings post-GSoC re
 I sincerely thank Google Summer of Code and INCF for opening the topic as a prospective project and reviewing my proposal on it.
 
 ## 12. Reference
+* Braitenberg, Valentino. Vehicles: Experiments in Synthetic Psychology. The MIT Press, 1984. Print.
 * [Processing](https://processing.org/), the organization.
-* https://en.wikipedia.org/wiki/Braitenberg_vehicle
+* [Braitenberg Vehicles](https://en.wikipedia.org/wiki/Braitenberg_vehicle)
+* [Valentino Braitenberg](https://en.wikipedia.org/wiki/Valentino_Braitenberg)
