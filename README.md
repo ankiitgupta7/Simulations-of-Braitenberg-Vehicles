@@ -101,7 +101,7 @@ The code written here can be directly run on [Processing Software](https://proce
 Alternatively, you make run these codes from terminal too and editing code in your favorite text editor. Follow the instructions on [this](https://py.processing.org/tutorials/command-line/) page.
 
 ## 10. Inference and Possible Implementations 
-As it’s very evident from the simulation, one of the major takeaways could be using the Braitenberg Vehicles as intelligent swarms. Also, the simulations can be used to optimize paths given different kinds of stimuli.
+As it’s very evident from the simulation, one of the major takeaways could be using the Braitenberg Vehicles as intelligent swarms. Also, the simulations can be used to predict/optimize paths given different kinds of stimuli.
 
 ## 11. Acknowledgement
 I thank Dr. Bradly Alicea for mentoring and holding weekly meetings post-GSoC results and guiding me during my proposal making before the results were announced. I also thank Stefan Dvoretskii, Jesse Parent, and Ziyi Gong for our interactions during the weekly calls.
