@@ -26,7 +26,7 @@ As we have multiple vehicles(agents) interacting with multiple moving stimuli, t
 ## 3. The Braitenberg Vehicle
 A Braitenberg vehicle is an agent that can autonomously move around based on its sensor inputs. It has primitive sensors that measure some stimulus at a point, and wheels (each driven by its own motor) that function as actuators or effectors.
 
-![alt text](https://github.com/ankiitgupta7/Simulations-of-Braitenberg-Vehicles/blob/master/Images/vehicle.png)
+![alt text](https://github.com/ankiitgupta7/Simulations-of-Braitenberg-Vehicles/blob/master/Images/dimensions.png)
 
 Depending on how sensors and wheels are connected, the vehicle exhibits different behaviors (which can be goal-oriented). This means that, depending on the sensor-motor wiring, it appears to strive to achieve certain situations and to avoid others, changing course when the situation changes.
 
