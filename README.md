@@ -61,7 +61,7 @@ Talking about the internal wiring, these are merely two simple combinations betw
 
 
 ## 6. Vehicle Kinematics
-Digging into the details of vehicle kinematics of Braitenberg Vehicles, we find that the only thing responsible for their movement is the rotation speed of the two wheels and the difference between them. 
+Digging into the details of vehicle kinematics of Braitenberg Vehicles, we find that the only thing responsible for their movement is the rotation speed of the two wheels & the difference between them. 
 <br>
 More specifically, the difference in the rotation speed of the wheels is mainly responsible for deflection from its otherwise straight-line trajectory. So, depending upon the activation received at the wheel rotators and their difference, a resultant vehicle movement is rendered.
 <br>
