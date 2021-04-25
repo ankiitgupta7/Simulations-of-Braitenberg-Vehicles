@@ -2,10 +2,12 @@ import random
 import math
 import stimulus
 import vehicle
+# Remember to check on path of the stimulus image file at line 9
+# Command for running the simulation: java -jar processing-py.jar execute.py ; remember 'cd build'
 
 D = 600  # window height
-d = 3   # vehicle size parameter
-img = loadImage("/home/ankit/Desktop/BV_Project/stimulus_data/cry.jpg")
+d = 2   # vehicle size parameter 
+img = loadImage("F:\Linux Backup\Desktop\Work\Active\BV Project\Simulations-of-Braitenberg-Vehicles\stimulus_data\cry.jpg")
 
 
 flag = input("\n\n\nPress 1 for single fixed stimuli, \nPress 2 for multiple moving stimuli,\nPress 3 for multiple fixed stimuli. \n\n")
@@ -26,10 +28,11 @@ for i in range(m):
     elif(flag==3):
         stim.append(stimulus.stimulus(img, random.uniform(0,2*D), random.uniform(0,D), 0,0))
 
-n = int(random.uniform(1,1000))    # number of vehciles in the environment
+n = int(random.uniform(100,500))    # number of vehciles in the environment
 objs = list()   # creating an array of vehicles
 for i in range(n):
-    objs.append(vehicle.vehicle(random.uniform(0,2*D), random.uniform(0,D), d, stim))
+    alpha = 2 * math.pi * random.uniform(0,1)
+    objs.append(vehicle.vehicle(random.uniform(0,2*D), random.uniform(0,D), d, stim, alpha))
 
 
 print "\n\nNo. of stimuli in the environment: ", m

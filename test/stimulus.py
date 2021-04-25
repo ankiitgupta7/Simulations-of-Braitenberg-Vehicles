@@ -12,7 +12,7 @@ class stimulus(object):
     # to display stimulus
     def display(self):
         stroke(0)
-        image(self.img,self.x-40,self.y-30,40,30)
+        image(self.img,self.x-40,self.y-30,80,60)
 
     def location(self):
         return self.x,self.y

@@ -94,7 +94,7 @@ def draw():
   background(100,100,0)
   for i in range(m):
     stim[i].display()
-    stim[i].drive()
+    stim[i].move()
 
   for i in range(n):
       objs[i].drive(0,0)

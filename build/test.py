@@ -156,5 +156,5 @@ def setup():
 def draw(): 
   background(100,100,0)
   for i in range(n):
-      objs[i].drive()
+      #objs[i].drive()
       objs[i].display()

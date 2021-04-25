@@ -3,13 +3,13 @@ import math
 import stimulus
 
 #m: no. of stimuli
-m = int(random.uniform(1,3))
+m = int(random.uniform(1,2))
 img = loadImage("cry.jpg")
 D = 600
 stim = list()
 for i in range(m):
-    #stim.append(stimulus.stimulus(img, random.uniform(0,2*D), random.uniform(0,D), random.uniform(0,20), random.uniform(0,20)))
-    stim.append(stimulus.stimulus(img, 600, 300, 0, 0))
+    stim.append(stimulus.stimulus(img, random.uniform(0,2*D), random.uniform(0,D), random.uniform(0,10), random.uniform(0,10)))
+    #stim.append(stimulus.stimulus(img, 600, 300, 0, 0))
 
 
 class vehicle(object):
@@ -27,21 +27,36 @@ class vehicle(object):
  #   def rotates(self,x,y,cosine,sine):
   #      return x*cosine-y*sine,x*sine+y*cosine
 
+
     def display(self):
         stroke(0)
-        c = color(int(255*(1-math.exp(-self.drive(0,0)))))
+    #    print(self.xpos, self.ypos)
+        vx,vy = self.drive(0,0)
+        v = sqrt(vx**2+vy**2)
+        c = color(int(255*(1-math.exp(-v))))
         #c=color(random.uniform(0,255))
         fill(c)
         rectMode(CENTER)
     #    self.xpos,self.ypos = self.rotates(self.xpos,self.ypos,(x-self.xpos)/self.distance(),(y-self.ypos)/self.distance())
         rect(self.xpos, self.ypos, self.L, self.B);
-        rect(self.xpos-(self.L)/2, self.ypos-(self.B)/2-(self.b)/2, self.l, self.b)
-        rect(self.xpos-(self.L)/2, self.ypos+(self.B)/2+(self.b)/2, self.l, self.b)
-        line(self.xpos+(self.L)/2, self.ypos+(self.B)/6, self.xpos+(self.L)/2+(self.B)/2, self.ypos+(self.B)/2)
-        line(self.xpos+(self.L)/2, self.ypos-(self.B)/6, self.xpos+(self.L)/2+(self.B)/2, self.ypos-(self.B)/2)
+        s1x,s1y,s2x,s2y = self.sensor_pos()
+        if(vx>=0):
+            rect(self.xpos-(self.L)/2, self.ypos-(self.B)/2-(self.b)/2, self.l, self.b)
+            rect(self.xpos-(self.L)/2, self.ypos+(self.B)/2+(self.b)/2, self.l, self.b)
+            line(self.xpos+(self.L)/2, self.ypos+(self.B)/6, s1x, s1y)
+            line(self.xpos+(self.L)/2, self.ypos-(self.B)/6, s2x, s2y)
+        else :
+            rect(self.xpos+(self.L)/2, self.ypos-(self.B)/2-(self.b)/2, self.l, self.b)
+            rect(self.xpos+(self.L)/2, self.ypos+(self.B)/2+(self.b)/2, self.l, self.b)
+            line(self.xpos-(self.L)/2, self.ypos+(self.B)/6, s1x, s1y)
+            line(self.xpos-(self.L)/2, self.ypos-(self.B)/6, s2x, s2y)
 
-    def location(self):
-        return self.xpos,self.ypos
+    def sensor_pos(self):
+        vx,vy = self.drive(0,0)
+        if(vx>=0):
+            return self.xpos+(self.L)/2+(self.B)/2, self.ypos+(self.B)/2, self.xpos+(self.L)/2+(self.B)/2, self.ypos-(self.B)/2
+        else :
+            return self.xpos-(self.L)/2-(self.B)/2, self.ypos+(self.B)/2, self.xpos-(self.L)/2-(self.B)/2, self.ypos-(self.B)/2
 
     # calculates Euclidean distance between (x,y) : sensor  and (sx,sy) : stimulus
     def distance(self,i,x,y):
@@ -75,7 +90,7 @@ class vehicle(object):
             v2 = self.activation(i,2)
             xcoeff,ycoeff = self.sign(i)
             xspeed += xcoeff*(v1+v2)/2
-            yspeed += ycoeff*((v1+v2)**2)/4
+            yspeed += -ycoeff*((v1+v2)**2)/4
 
         if self.xpos > 2*D:
             self.xpos = 0
@@ -88,11 +103,12 @@ class vehicle(object):
 
         self.xpos = self.xpos + xspeed
         self.ypos = self.ypos + yspeed
-        return sqrt(xspeed**2 + yspeed**2)
+
+        return xspeed,yspeed
 
     def sign(self,i):
         sx,sy = stim[i].location()
-        x,y = self.location()
+        x,y = self.xpos,self.ypos
         xcoeff=0
         ycoeff=0
         if(sx<x):
@@ -120,7 +136,7 @@ def draw():
   background(100,100,0)
   for i in range(m):
     stim[i].display()
-    stim[i].drive()
+    stim[i].move()
 
   for i in range(n):
       objs[i].drive(0,0)
