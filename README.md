@@ -10,12 +10,10 @@
 ### 8. Future Developments 
 ### 9. Setting up and executing Processing.py code
 ### 10. Inference and Possible Implementations 
-### 11. Acknowledgement
-### 12. Reference
+### 11. Reference
 
 ## 1. What this is about?
-This is the implementation of my Braitenberg Vehicle Simulation Proposal, submitted for International Neuroinformatics Coordinating Facility ([INCF](https://www.incf.org/)) at Google Summer of Code, 2019. The prototype developed during proposal making period can be seen [here](https://github.com/ankiitgupta7/Simulations-of-Braitenberg-Vehicles/tree/master/Prototype). It was done using [Turtle](https://docs.python.org/3/library/turtle.html). The content of proposal idea can be found [here](https://drive.google.com/open?id=10oOEA-JDcRCXqQFo1aB8Hm-UIsu4KFgi).<br><br>
-The present simulation uses [Processing.py](https://py.processing.org/) for UI support. The code written here are based upon ideas described in the book by the neuroscientist [Valentino Braitenberg](https://en.wikipedia.org/wiki/Valentino_Braitenberg) in his classic book "Vehicles: Experiments in Synthetic Psychology" (1984). The book describes how hypothetical analog vehicles (a combination of sensors, actuators and their interconnections), though simple in design, can exhibit behaviors akin to aggression, love, foresight, and optimism. So, we would see these meaningful behaviours emerge from vehicles as they interact with stimuli in the environment through the programmed simulation.
+This is the implementation of my Braitenberg Vehicle Simulation Project. The present simulation uses [Processing.py](https://py.processing.org/) for UI support. The code written here are based upon ideas described in the book by the neuroscientist [Valentino Braitenberg](https://en.wikipedia.org/wiki/Valentino_Braitenberg) in his classic book "Vehicles: Experiments in Synthetic Psychology" (1984). The book describes how hypothetical analog vehicles (a combination of sensors, actuators and their interconnections), though simple in design, can exhibit behaviors akin to aggression, love, foresight, and optimism. So, we would see these meaningful behaviours emerge from vehicles as they interact with stimuli in the environment through the programmed simulation.
 
 ## 2. What would be the final outcome of this project?
 The final result would be an intelligent and autonomous system of "vehicles" from which emergent behaviors could be seen as a result of their interaction with the environmental stimuli. Each vehicle would seem intelligent enough to make decisions with respect to the environmental stimuli around.
@@ -103,12 +101,8 @@ Alternatively, you make run these codes from terminal too and editing code in yo
 ## 10. Inference and Possible Implementations 
 As it’s very evident from the simulation, one of the major takeaways could be using the Braitenberg Vehicles as intelligent swarms. Also, the simulations can be used to predict/optimize paths given different kinds of stimuli.
 
-## 11. Acknowledgement
-I thank Dr. Bradly Alicea for mentoring and holding weekly meetings post-GSoC results and guiding me during my proposal making before the results were announced. I also thank Stefan Dvoretskii, Jesse Parent, and Ziyi Gong for our interactions during the weekly calls.
-<br><br>
-I sincerely thank Google Summer of Code and INCF for opening the topic as a prospective project and reviewing my proposal on it.
 
-## 12. Reference
+## 11. Reference
 * Braitenberg, Valentino. Vehicles: Experiments in Synthetic Psychology. The MIT Press, 1984. Print.
 * [Processing](https://processing.org/), the organization.
 * [Braitenberg Vehicles](https://en.wikipedia.org/wiki/Braitenberg_vehicle)
