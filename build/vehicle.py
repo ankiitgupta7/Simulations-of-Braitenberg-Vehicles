@@ -1,6 +1,7 @@
 import random
 import math
 import vehicle_tools  as tools
+import stimulus
 
 # vy = 0
 
@@ -14,7 +15,10 @@ class vehicle(object):
 
     def display(self):
         # sets up vehicle color intensity as per net velocity
-        c = color(int(255*(1-math.exp(-v))))
+        if(math.isnan(v)):
+            c = color(0)
+        else:
+            c = color(int(255*(1-math.exp(-v))))
         stroke(c)
         # print("angle = ",self.alpha)
         self.displayBody()
@@ -131,32 +135,45 @@ class vehicle(object):
 
 
 
-    def move(self, type, w1, w2, w3, w4):
+    def move(self):
         global v
+        v, v1, v2, a1, a2 = 0, 0, 0, 0, 0
         # acquiring instantaneous co-ordinates of sensors
         s1x,s1y,s2x,s2y = self.sensorLocation()
-        a1,a2 = 0,0
-
         m = len(self.stim)
         # processing each of m stimuli at a time
-        for i in range(m):
+        for i in range(m):   
+            type = self.stim[i].type
+            # decide on wiring weights based on vehicle type
+            if(type == "1a" or type == "1b"):
+                w1,w2,w3,w4 = 1,1,1,1
+            elif(type == "2a" or type == "3a"):
+                w1,w2,w3,w4 = 1,1,0,0           # parallel wiring
+            elif(type == "2b" or type == "3b"):
+                w1,w2,w3,w4 = 0,0,1,1           # crossed wiring
+            else:
+                w1,w2,w3,w4 = 0,0,0,0
+
             x,y = self.stim[i].location()    # acquiring location of ith stimulus
             a1 += tools.activation(x,y,s1x,s1y,type)  # activation in 1st sensor due to ith stimulus
             a2 += tools.activation(x,y,s2x,s2y,type)  # activation in 2nd sensor due to ith stimulus
+
             v1 = w1*a1 + w4*a2  # velocity activation in 1st wheel
             v2 = w3*a1 + w2*a2  # velocity activation in 2nd wheel
-            v = (v1 + v2) / 2 # net velocity of vehicle
+        
+        v = (v1 + v2) / 2 # net velocity of vehicle
 
-            vx = v * math.cos(self.alpha)
-            vy = v * math.sin(self.alpha)
+        vx = v * math.cos(self.alpha)
+        vy = v * math.sin(self.alpha)
 
+        self.alpha += (v1 - v2) * .05
 
         # updating the new position as vehicle moves
         self.xpos = self.xpos + vx
         self.ypos = self.ypos + vy
 
         # to make vehciles reappear from other side of environment as they escape
-        if self.xpos > width:
+        if self.xpos > .9*width:
             self.alpha += math.pi
         elif self.xpos <= 0:
             self.alpha += math.pi
@@ -165,4 +182,3 @@ class vehicle(object):
         elif self.ypos <= 0:
             self.alpha += math.pi
 
-        self.alpha += (v1 - v2) * .05
