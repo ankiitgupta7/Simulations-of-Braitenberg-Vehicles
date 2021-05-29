@@ -3,7 +3,7 @@ import random
 import math
 import stimulus
 import vehicle
-# Remember to check on path of the stimulus image file at line 9
+# Remember to check on path of the stimulus image file at line 19
 
 # Please note that this code requires the library "controlP5", 
 # in order to execute it on the command line with "java -jar processing-py.jar run.py",
@@ -15,9 +15,11 @@ D = 650
 d = 2   # vehicle size parameter 
 
 
-img1 = loadImage("./images/2a.png")
-img2 = loadImage("./images/2b.png")
-img3 = loadImage("./images/3a.png")
+
+img1 = loadImage("E:/Work/Active/BV Project/Simulations-of-Braitenberg-Vehicles/stimulus_data/images/2a.png")
+img2 = loadImage("E:/Work/Active/BV Project/Simulations-of-Braitenberg-Vehicles/stimulus_data/images/2b.png")
+img3 = loadImage("E:/Work/Active/BV Project/Simulations-of-Braitenberg-Vehicles/stimulus_data/images/3a.png")
+
 
 
 img = img1, img2, img3
@@ -30,19 +32,27 @@ def setup():
 
 
 def draw():
+    global cp5  
     global start
     global stim
+    global objs
+    global n
+    global d
+
     if(frameCount == 1):
         background('#004477')
         fill(126)
         rect(.9*width, 500, 80, 20)
         fill(0)
         textSize(16)
-        text("     Run", .9*width, 516)
-        global cp5        
+        text("     Run", .9*width, 516)      
         cp5 = ControlP5(this)   
         nAgent = cp5.addSlider("Agents")
-        nAgent.setPosition(.9*width,400).setSize(80,20).setRange(100, 1000).setValue(400)
+        nAgent.setPosition(.9*width,400).setSize(80,20).setRange(1, 1000).setValue(400).setNumberOfTickMarks(1000).setSliderMode(Slider.FLEXIBLE)
+
+        
+        scale = cp5.addSlider("scale")
+        scale.setPosition(.9*width,450).setSize(80,20).setRange(1, 10).setValue(2).setNumberOfTickMarks(10).setSliderMode(Slider.FLEXIBLE)
 
 
         l = "zero", "one", "two", "three", "four", "five", "six", "seven"
@@ -65,7 +75,6 @@ def draw():
         n2a = int(cp5.getController("2a stimulus population").getValue())
         n2b = int(cp5.getController("2b stimulus population").getValue())
         n3a = int(cp5.getController("3a stimulus population").getValue())
-        global n
         n = int(cp5.getController("Agents").getValue())
 
 
@@ -92,8 +101,8 @@ def draw():
 
 
 
-        global objs
         objs = list()   # creating an array of vehicles
+        d = int(cp5.getController("scale").getValue())  # accessing vehicle scale parameter
         for i in range(n):
             alpha = 2 * math.pi * random.uniform(0,1)
             objs.append(vehicle.vehicle(random.uniform(0,.9*width), random.uniform(0,D), d, stim, alpha))
@@ -128,5 +137,5 @@ def draw():
 
         for i in range(n):
             # processing display and movement of stimulus
-            objs[i].move()   # moves as per "1a" behaviour
+            objs[i].move()  
             objs[i].display()
