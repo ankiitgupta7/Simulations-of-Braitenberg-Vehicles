@@ -15,10 +15,9 @@ D = 650
 d = 2   # vehicle size parameter 
 
 
-
-img1 = loadImage("E:/Work/Active/BV Project/Simulations-of-Braitenberg-Vehicles/stimulus_data/images/2a.png")
-img2 = loadImage("E:/Work/Active/BV Project/Simulations-of-Braitenberg-Vehicles/stimulus_data/images/2b.png")
-img3 = loadImage("E:/Work/Active/BV Project/Simulations-of-Braitenberg-Vehicles/stimulus_data/images/3a.png")
+img1 = loadImage("./images/2a.png")
+img2 = loadImage("./images/2b.png")
+img3 = loadImage("./images/3a.png")
 
 
 
