@@ -1,3 +1,5 @@
+# deprecated
+
 import random
 import math
 import stimulus
@@ -7,9 +9,11 @@ import vehicle
 
 D = 600  # window height
 d = 1   # vehicle size parameter 
-img1 = loadImage("F:/Linux Backup/Desktop/Work/Active/BV Project/Simulations-of-Braitenberg-Vehicles/Images/2a.png")
-img2 = loadImage("F:/Linux Backup/Desktop/Work/Active/BV Project/Simulations-of-Braitenberg-Vehicles/Images/2b.png")
-img3 = loadImage("F:/Linux Backup/Desktop/Work/Active/BV Project/Simulations-of-Braitenberg-Vehicles/Images/3a.png")
+
+
+img1 = loadImage("./images/2a.png")
+img2 = loadImage("./images/2b.png")
+img3 = loadImage("./images/3a.png")
 
 
 img = img1, img2, img3
