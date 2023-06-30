@@ -10,7 +10,7 @@
 ## 1. What this is about?
 This is the implementation of my Braitenberg Vehicle Simulation Project. The present simulation uses [Processing.py](https://py.processing.org/) for UI support. The code written here are based upon ideas described in the book by the neuroscientist [Valentino Braitenberg](https://en.wikipedia.org/wiki/Valentino_Braitenberg) in his classic book "Vehicles: Experiments in Synthetic Psychology" (1984). The book describes how hypothetical analog vehicles (a combination of sensors, actuators and their interconnections), though simple in design, can exhibit behaviors akin to aggression, love, foresight, and optimism. So, we would see these meaningful behaviours emerge from vehicles as they interact with stimuli in the environment through the programmed simulation.
 
-<video src="doc\recordings\new\2a_avoiding-obstacles.mp4" controls="controls" style="max-width: 730px;">
+<video src="doc/recordings/new/2a_avoiding-obstacles.mp4" controls="controls" style="max-width: 730px;">
 </video>
 
 ## 2. The Braitenberg Vehicle
