@@ -1,4 +1,4 @@
-# deprecated
+# deprecated - go for run.py
 
 import random
 import math
