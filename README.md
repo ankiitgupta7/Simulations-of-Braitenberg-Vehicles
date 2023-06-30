@@ -27,7 +27,7 @@ The stimuli are scattered throughout the environment which may or may not be mov
 <br><br>
 The vehicle’s initial positions are also randomly generated coordinates within the environment window. The movement of the vehicles is governed by the type of stimulus around and their proximity. So, the vehicle movement is completely dependent upon the stimuli around.
 
-![alt text](build/images/environment.png)
+![alt text](build/images/interface.png)
 
 ## 4. Wiring Rules and Activation Function
 Each type of vehicle is characterized by these two properties being unique to them. By tweaking these properties we get different emergent behaviors and hence different names are assigned to the vehicles. The vehicle movement is particularly inspired by sensory activation received through its sensors and how this activation is transferred to the motor (Internal Wiring).
